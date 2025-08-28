@@ -12,7 +12,7 @@ _Bioinformatics for Ukraine workshop, xx-xx October 2025, Kyiv, Ukraine._
 ## Загальний опис
 Курс має декілька незалежних цілей:
 
-- Зрозуміти загальні матоди та бібліотеки для роботи із цифровими зображеннями з використанням python.
+- Зрозуміти загальні методи та бібліотеки для роботи із цифровими зображеннями з використанням python.
 - Вивчити/пригадати загальні підходи для роботи з кодом на python для його ефективного повторного використання.
 - Знайомство із [napari](https://napari.org/stable/), python-based програми для відображення і обробки зображень.
 
@@ -59,43 +59,74 @@ _Bioinformatics for Ukraine workshop, xx-xx October 2025, Kyiv, Ukraine._
 - napari
 - setuptools (необхідна для встановлення створених власноруч пакетів python)
 
-## Створення робочого оточення
-### Встанвлення miniconda
-При роботі з python-проєктами менеджер оточень (_environment management system_) використовуються для встановлення бібліотек щоб запобігти конфлікту версій та залежностей. До найбільш вживаних відносяться [venv](https://docs.python.org/3/library/venv.html) та  [conda](https://docs.conda.io/en/latest/).
+## Встанвлення miniconda
+При роботі з python-проєктами менеджер оточень (_environment management system_) використовуються для встановлення бібліотек з віддалених сереверів, _репозиторіїв_, або цілих груп сереверів - _каналів_. Це дозволяє запобігти конфлікту версій та залежностей. До найбільш вживаних відносяться [venv](https://docs.python.org/3/library/venv.html) та  [conda](https://docs.conda.io/en/latest/).
 
 Для роботи з jupyter-ноутбуками  впродовж перших трьох зустрічей необхідно створити робоче оточення за допомогою conda і встановити в нього всі необхідні бібліотеки.
 
-[Встановіть](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) менеджер оточень __Miniconda__ для Вашої операційної системи.
+[Встановіть](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) менеджер оточень __miniconda__ для Вашої операційної системи.
 
 > [!WARNING]
-> Рекомендую встановлювати саме Miniconda, оскільки Anaconda одразу містить багато непотрібних для проекту бібліотек і важить > 2GB.
+> Рекомендую встановлювати саме miniconda, оскільки anaconda одразу містить багато непотрібних для проекту бібліотек і важить > 2GB.
 
-### Створення та підготовка оточення
-Наступні команди вводити в _Unix-термінал_ (у випадку Linux або MacOS) або запустивши _Anaconda Prompt_ (у випадку Windows).
-
-Створення оточення з мінімальним набором бібілотек:
-```
-conda create -n bioin-img-env python>3.9 jupyter numpy matplotlib pandas
-```
-
-```
-conda create -n bioin-img-env python>3.9 jupyter numpy pandas scipy scikit-image matplotlib setuptools
-```
-
-Запуск оточення:
-```
-conda activate bioin-img-env
-```
-
-Вихід з оточення:
-```
-conda deactivate bioin-img-env
-```
+## Створення та підготовка оточення
+Спілкування з miniconda відбувається шляхом текстових команд в _Unix-терміналі_ (у випадку Linux або MacOS) або запустивши _Anaconda Prompt_ (у випадку Windows).
 
 > [!TIP]
 > Короткий перелік [основних команд conda](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf).
 
-#### Встановлення napari
+### Plan A (створення оточення однією командою, перевірено на miniconda 25.7.0 )
+Створення оточення з необхідним набором бібілотек:
+
+```
+conda create -n bioin-img python jupyter numpy pandas scipy scikit-image matplotlib-base setuptools
+```
+
+> [!CAUTION]
+>
+> Якщо після першого запуску miniconda при спробі створити оточення виникає помилка
+>
+> ```
+> CondaToSNonInteractiveError: Terms of Service have not been accepted for the following channels. Please accept or remove them before proceeding:
+>     - https://repo.anaconda.com/pkgs/main
+>     - https://repo.anaconda.com/pkgs/r
+> 
+> To accept these channels' Terms of Service, run the following commands:
+>     conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+>     conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+> ```
+>
+> просто погоджуйтесь і робіть те, що воно вас попросило :(
+>
+> Послідовно виконайте в _Unix-термінал/Anaconda Prompt_ дві запропоновані miniconda команди щоб прийняти ліцензійні умови репозиторіїв:
+>
+> ```
+> conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+>```
+> ```
+> conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+> ```
+
+### Plan B (коли щось пішло не надто не так)
+Якщо виникла інша помилка і не вдалось створити оточення, раджу перевірити перелік доступних каналів, звідки conda може встановлювати пакети. 
+
+Для цього виконайте:
+
+```
+conda config --show channels
+```
+
+Якщо у переліку присутні лише `defaults`, необхідно дадати канал `conda-forge` що містить велику кількість корисних бібліотек: 
+
+```
+conda config --add channels conda-forge
+```
+
+Після цього створення оточення за Plan A має пройти вдало.
+
+
+
+## Встановлення napari
 
 [napari](https://napari.org/stable/) є відкритим програмним забезпеченням для візуалізації та аналізу багатовимірних зображень. Окрім можливості перегляду зображень napari надає зручний графічний інтерфейс та простий framework для інтеграції нового фукціоналу у вигляді плагінів. Доступні плагіни можна знайти на [napari-hub](https://www.napari-hub.org/).
 
