@@ -3,6 +3,14 @@ Image Analysis with Python and Napari
 
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua)
 
+<p align="left">
+<a href="#logo" name="logo"><img src="pic/logo_kau.png" width="200"></a>
+</p>
+
+<p align="left">
+<a href="#logo" name="logo"><img src="pic/logo_bioin.png" width="300"></a>
+</p>
+
 _Bioinformatics for Ukraine course, 6-24 October 2025, Kyiv, Ukraine._
 
 ---
@@ -62,32 +70,36 @@ _Bioinformatics for Ukraine course, 6-24 October 2025, Kyiv, Ukraine._
 ## Структура репозиторію курсу
 ```
 └── BioInUA_2025_img_abalysis
-    ├─── data                             # папка для розміщення Ваших даних, не лякайтесь качки
-    ├─── demo_data                        # демонстраційні і навчальні дані
-    ├─── slides                           # презентації до курсу
-    ├─── templates                        # приклади структур python для різних зустрічей
-    │    ├─── package-template                # приклад пакета python
-    │    ├─── plugin-template                 # приклад пакета python оформленого в плагін для napari
-    │    └─── module_template                 # приклад модуля python
-    ├─── .git                             # дані системи контролю версій git
+    ├───── data                          # папка для розміщення Ваших даних, не лякайтесь качки
+    ├───── demo_data                     # демонстраційні і навчальні дані
+    │      └─ DESCRIPTION.md                 # опис демонстраційних та навчальних даних
+    │
+    ├───── pic                           # зображення для README
+    ├───── slides                        # презентації до курсу
+    ├───── templates                     # приклади структур python для різних зустрічей
+    │     ├───── package-template            # приклад пакета python
+    │     ├───── plugin-template             # приклад пакета python оформленого в плагін для napari
+    │     └───── module_template             # приклад модуля python
+    │
+    ├───── .git                          # дані системи контролю версій git
     |
-    ├── 1_img_as_arrays.ipynb             # jupiter-notebook для першої зустрічі 
-    ├── 2_preproc_and_segmentation.ipynb  # jupiter-notebook для другої зустрічі
-    ├── 3_features_and_analysis.ipynb     # jupiter-notebook для третьої зустрічі
+    ├─ 1_img_as_arrays.ipynb             # jupiter-notebook для першої зустрічі 
+    ├─ 2_preproc_and_segmentation.ipynb  # jupiter-notebook для другої зустрічі
+    ├─ 3_features_and_analysis.ipynb     # jupiter-notebook для третьої зустрічі
+    ├─ 4_napari_plugins.ipynb            # jupiter-notebook для четвертої зустрічі
     |
-    ├── LICENSE                           # ліцензія матеріалів курсу, CC BY 4.0 
-    └── README.md                         # файл опису курсу
+    ├─ LICENSE                           # ліцензія матеріалів курсу, CC BY 4.0 
+    └─ README.md                         # файл опису курсу
 ```
 
 ## Необхідні бібліотеки
 - Jupyter
-- Numpy
+- NumPy
 - Pandas
-- Scipy
-- Scikit-image
+- SciPy
+- Scikit-Image
 - Matplotlib
 - napari
-- setuptools (необхідна для встановлення створених власноруч пакетів python)
 
 ## Встановлення miniconda
 При роботі з python-проєктами менеджер оточень (_environment management system_) використовуються для встановлення бібліотек з віддалених серверів, _репозиторіїв_, або цілих груп серверів - _каналів_. Це дозволяє запобігти конфліктам версій та залежностей. До найбільш вживаних відносяться [venv](https://docs.python.org/3/library/venv.html) та  [conda](https://docs.conda.io/en/latest/).
@@ -109,7 +121,7 @@ _Bioinformatics for Ukraine course, 6-24 October 2025, Kyiv, Ukraine._
 Створення оточення з необхідним набором бібліотек:
 
 ```
-conda create -n bioin-img python jupyter numpy pandas scipy scikit-image matplotlib-base setuptools -y
+conda create -n bioin-img python jupyter numpy pandas scipy scikit-image matplotlib-base -y
 ```
 
 Пошук, завантаження і встановлення бібліотек можуть зайняти понад 10 хвилин, а по завершенню miniconda може запропонувати Вам активувати новостворене оточення.
