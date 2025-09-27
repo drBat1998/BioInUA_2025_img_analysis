@@ -4,11 +4,11 @@ Image Analysis with Python and Napari
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua)
 
 <p align="left">
-<a href="#logo" name="logo"><img src="pic/logo_kau.png" width="200"></a>
+<a href="#logo" name="logo"><img src="pic/logo_kau.png" width="150"></a>
 </p>
 
 <p align="left">
-<a href="#logo" name="logo"><img src="pic/logo_bioin.png" width="300"></a>
+<a href="#logo" name="logo"><img src="pic/logo_bioin.png" width="250"></a>
 </p>
 
 _Bioinformatics for Ukraine course, 6-24 October 2025, Kyiv, Ukraine._
@@ -34,13 +34,13 @@ _Bioinformatics for Ukraine course, 6-24 October 2025, Kyiv, Ukraine._
 Курс розрахований на слухачів або із попереднім досвідом програмування на python Необхідними є загальні уявлення про типи даних (`str`, `int`, `float`, `list`, `dict`, `bool`, etc.) та основні оператори й синтаксичні конструкції (`if-else`, `for loop`).
 
 > [!NOTE]
-> Типи даних в Python [українською](https://w3schoolsua.github.io/python/python_datatypes.html#gsc.tab=0) або [англійською](https://www.w3schools.com/python/python_datatypes.asp).
+> Типи даних в Python [українською](https://w3schoolsua.github.io/python/python_datatypes.html#gsc.tab=0) та [англійською](https://www.w3schools.com/python/python_datatypes.asp).
 
 > [!NOTE]
 > Синтаксис конструкцій [if-else](https://w3schoolsua.github.io/python/python_conditions.html#gsc.tab=0) та [for loop](https://w3schoolsua.github.io/python/python_for_loops.html#gsc.tab=0) українською й [if-else](https://www.w3schools.com/python/python_conditions.asp) та [for loop](https://www.w3schools.com/python/python_for_loops.asp) англійською.
 
 > [!NOTE]
-> Синтаксис функцій та класів в Python [українською](https://w3schoolsua.github.io/python/python_functions.html#gsc.tab=0) або [англійською](https://www.w3schools.com/python/python_functions.asp).
+> Синтаксис функцій та класів в Python [українською](https://w3schoolsua.github.io/python/python_functions.html#gsc.tab=0) та [англійською](https://www.w3schools.com/python/python_functions.asp).
 
 | Формат             | Опис                                                         |
 | ------------------ | ------------------------------------------------------------ |
@@ -61,7 +61,7 @@ _Bioinformatics for Ukraine course, 6-24 October 2025, Kyiv, Ukraine._
 | 1 | Зображення як багатовимірні масиви, відображення багатоканальних і тривимірних зображень, псевдокольори (color maps / lookup table). | Завантаження/збереження зображень, маніпуляції з масивами numpy, відображення зображень. | Відпрацювання маніпуляцій із масивами numpy: виділення окремих регіонів на зображеннях для подальшого аналізу, підбір оптимальних налаштувань для відображення зображень. | jupyter, numpy, matplotlib |
 | 2 | Попередня обробка зображень, детекція та сегментація об'єктів на зображеннях. | Фільтрація зображень, методи побудови бінарних і багаторівневих масок, морфологічні операції над масками. Функції. | Оформлення окремих етапів процесингу зображень в функції (для фільтрації, початкової детекції об'єктів, отримання кінцевих масок об'єктів тощо). | scikit-image, scipy, ndimage |
 | 3 | Отримання кількісних даних з зображень та збереження результатів аналізу. | Оцінка морфологічних параметрів масок, оцінка зміни параметрів в масках в часі, збереження результатів аналізу в табличному форматі. Модулі/класи. | Оформлення окремих етапів аналізу зображень і збереження результатів аналізу в функції; перенесення набору створених функцій у модуль. | scikit-image, scipy, pandas |
-| 4 | napari -  open source для переглядання та аналізу зображень | Упаковка результатів роботи у модулі та перетворення їх у плагін для  napari. Пакети python. | Перетворення функцій створених на попередніх зустрічах у віджети napari. | setuptools, napari |
+| 4 | napari -  open source для переглядання та аналізу зображень | Упаковка результатів роботи у модулі та перетворення їх у плагін для  napari. Пакети python. | Перетворення функцій створених на попередніх зустрічах у віджети napari. | napari |
 
 ---
 
@@ -77,9 +77,9 @@ _Bioinformatics for Ukraine course, 6-24 October 2025, Kyiv, Ukraine._
     ├───── pic                           # зображення для README
     ├───── slides                        # презентації до курсу
     ├───── templates                     # приклади структур python для різних зустрічей
-    │     ├───── package-template            # приклад пакета python
-    │     ├───── plugin-template             # приклад пакета python оформленого в плагін для napari
-    │     └───── module_template             # приклад модуля python
+    │      ├───── package-template           # приклад пакета python
+    │      ├───── plugin-template            # приклад пакета python оформленого в плагін для napari
+    │      └───── module_template            # приклад модуля python
     │
     ├───── .git                          # дані системи контролю версій git
     |
@@ -204,9 +204,62 @@ python -m pip install "napari[all]"
 Інтегроване середовище розробки (_Integrated Development Environment - IDE_) значно спростить роботу з оточеннями conda та jupyter-notebook з яких складається цей курс.
 
 Встановлення та налаштування:
-- [Встановіть](https://code.visualstudio.com/) __Visual Studio Code__ відповідно Вашій операційній системі
+- [Встановіть](https://code.visualstudio.com/) __Visual Studio Code__ для Вашої операційної системи
 - Для роботи з кодом python та jupyter-ноутбуками користуючись вкладкою _Розширення_ (_Extensions_) на лівій панелі IDE встановіть розширення __python__ та __jupyter__
 - Для запуску jupyter-notebook в створеному раніше оточенні conda натисніть на меню _Select Kernel_ у верхньому правому кутку вікна відкритого jupyter-notebook, оберіть пункт _Python Environment_ та необхідне нам оточення  __bioin-img__ серед запропонованих варіантів інтерпретаторів чи оточень (у випадку такого підключення попередній запуск оточення через Unix-термінал/Anaconda Prompt не потрібен).
+
+---
+
+# Шпаршалка по пакетах python/плагінах napari
+
+## Структура директорії пакту python
+```
+└── package-template/          # директорія пакету
+    └── src/                       # загальна директорія із вихідним кодом пакету
+    │   └── package_template/      # директорія із модулями пакету
+    │       ├── __init__.py        # службовий файл директорії
+    │       └── module.py          # код модуля у складі пакету
+    │       │
+    │       └── sub_package/       # піддиректорія пакету
+    │           ├── __init__.py        # службовий файл директорії
+    │           └── sub_module.py      # код підмодуля у складі пакету
+    │
+    ├── pyproject.toml        # конфігураційний файл
+    ├── README.md             # файл опису
+    ├── LICENSE               # ліцензія
+    └── .gitignore            # службовий файл git
+```
+
+Файли `__init.py__` вказують, що вміст директорії містить в собі модулі python, а не довільні файли. Додаткову інформацію про створення пакетів можна подивитись в офіційній документації python про [модулі](https://docs.python.org/3/tutorial/modules.html) та [пакети](https://packaging.python.org/en/latest/tutorials/packaging-projects/).
+
+
+## Структура директорії плагіна napari
+
+```
+└── plugin-template/          # директорія плагіну
+    ├── src/                  # загальна директорія із вихідним кодом
+    │   └── plugin_template/      # директорія із модулями плагіну
+    │       ├── __init__.py       # службовий файл директорії
+    │       ├── napari.yaml       # маніфест napari
+    │       └── _widget.py        # код віджетів плагіну
+    │
+    ├─── pyproject.toml       # конфігураційний файл
+    ├─── README.md            # файл опису
+    ├─── LICENSE              # ліцензія
+    └─── .gitignore           # службовий файл git
+```
+
+Додатковий службовий файл `napari.yaml` у директорії із вихідним кодом, маніфест, містить вказівки на приналежність конкретних функцій в складі модулів до елементів плагіну і додаткову інформацію для відображенні в графічному інтерфейсі napari. Додаткову інформацію про створення плагінів можна подивитись в [офіціфній документації napari](https://napari.org/dev/plugins/building_a_plugin/first_plugin.html).
+
+## Встановлення пакету/плагіну з використанням pip
+
+Для встановлення створеного власноруч пакету чи плагіну необхідно користуючись _Unix-терміналом/Anaconda Prompt_ перейти в директорії проєкту та виконати наступну команду:
+
+```
+python -m pip install -e .
+```
+
+Флаг `-e` забезпечує встановлення з можливітю редагування (_editable install_), тому всі зміни в вихідному коді пакету/плагіну будуть одразу доступні до використання після перезаванатежаення ітепритатора python. 
 
 ---
 
@@ -229,4 +282,4 @@ python -m pip install "napari[all]"
 - [An introduction to optical super-resolution microscopy for the adventurous biologist](https://www.researchgate.net/publication/323073291_An_introduction_to_optical_super-resolution_microscopy_for_the_adventurous_biologist)
 - [Nanoscopy and Multidimensional Optical Fluorescence Microscopy](https://www.tandfonline.com/doi/pdf/10.1080/00107514.2011.580375)
 
- <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/wisstock/BioIn_2025_img_analysis">Image analysis with python, workshop for BioInUA </a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/wisstock">Borys Olifirov</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p> 
+ <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/wisstock/BioIn_2025_img_analysis">Image Analysis with Python and Napari, BioInUA course </a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/wisstock">Borys Olifirov</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p> 
