@@ -267,7 +267,7 @@ python -m pip install "napari[all]"
 python -m pip install -e .
 ```
 
-Флаг `-e` забезпечує встановлення з можливітю редагування (_editable install_), тому всі зміни в вихідному коді пакету/плагіну будуть одразу доступні до використання після перезаванатежаення ітепритатора python. 
+Флаг `-e` забезпечує встановлення з можливітю редагування (_editable install_), тому всі зміни в вихідному коді пакету/плагіну будуть одразу доступні до використання після перезаванатажаення інтепритатора python. 
 
 ---
 
@@ -289,5 +289,10 @@ python -m pip install -e .
 - [Handbook of Biological Confocal Microscopy](https://link.springer.com/book/10.1007/978-0-387-45524-2)
 - [An introduction to optical super-resolution microscopy for the adventurous biologist](https://www.researchgate.net/publication/323073291_An_introduction_to_optical_super-resolution_microscopy_for_the_adventurous_biologist)
 - [Nanoscopy and Multidimensional Optical Fluorescence Microscopy](https://www.tandfonline.com/doi/pdf/10.1080/00107514.2011.580375)
+
+---
+
+# Ліцензія
+Всі матеріали курсу, включно із кодом, демонстраційними даними та візуальними матеріалами ліцензовані на умовах [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1). Ви можете вільно використовувати, поширювати, змінювати та адаптувати матеріали курсу для будь-яких цілей, за умови вказання відповідного авторства.
 
  <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/wisstock/BioIn_2025_img_analysis">Image Analysis with Python and Napari, BioInUA course </a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/wisstock">Borys Olifirov</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p> 
