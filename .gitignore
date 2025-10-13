@@ -15,4 +15,5 @@ eggs/
 *.egg-info/
 *.egg
 
+course_data/my_data/
 .DS_Store
